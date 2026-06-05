@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Build 2026 — Updates &amp; Announcements</title>
+<style>
+  :root{
+    --bg:#0b1020;
+    --card:#141a2e;
+    --card2:#1a2138;
+    --accent:#4cc2ff;
+    --accent2:#7a5cff;
+    --text:#e8edf7;
+    --muted:#9aa7c2;
+    --line:#26304d;
+    --ga:#3ddc97;
+    --preview:#ffcf5c;
+    --soon:#ff8a8a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,#16203d 0,transparent 60%),var(--bg);
+    background-color:var(--bg);
+    color:var(--text);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 22px 64px}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,rgba(122,92,255,.25),rgba(76,194,255,.18));
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:40px 34px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;
+    background:radial-gradient(circle,rgba(76,194,255,.35),transparent 70%);
+    filter:blur(10px);
+  }
+  .eyebrow{
+    display:inline-block;font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:14px;
+  }
+  .hero h1{font-size:40px;line-height:1.12;font-weight:800;letter-spacing:-.5px}
+  .hero h1 span{
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p{margin-top:14px;color:var(--muted);font-size:17px;max-width:680px}
+  .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .pill{
+    background:rgba(255,255,255,.06);border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;font-size:13px;color:var(--text)
+  }
+
+  /* Theme strip */
+  .themes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 8px}
+  .theme{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px
+  }
+  .theme h3{font-size:15px;margin-bottom:6px}
+  .theme p{color:var(--muted);font-size:13.5px}
+  .theme .n{color:var(--accent2);font-weight:800;font-size:13px;letter-spacing:.1em}
+
+  /* Sections */
+  .section{margin-top:38px}
+  .section > h2{
+    font-size:22px;font-weight:800;display:flex;align-items:center;gap:12px;margin-bottom:6px
+  }
+  .section > h2 .dot{width:11px;height:11px;border-radius:3px;background:var(--accent)}
+  .section .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .card{
+    background:linear-gradient(180deg,var(--card),var(--card2));
+    border:1px solid var(--line);border-radius:16px;padding:20px 20px;
+    transition:transform .15s ease,border-color .15s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:#33406b}
+  .card h4{font-size:16.5px;margin-bottom:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .card p{color:var(--muted);font-size:14px}
+  .tag{
+    font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:3px 9px;border-radius:6px;white-space:nowrap
+  }
+  .t-ga{background:rgba(61,220,151,.14);color:var(--ga);border:1px solid rgba(61,220,151,.3)}
+  .t-preview{background:rgba(255,207,92,.14);color:var(--preview);border:1px solid rgba(255,207,92,.3)}
+  .t-soon{background:rgba(255,138,138,.14);color:var(--soon);border:1px solid rgba(255,138,138,.3)}
+  .t-new{background:rgba(122,92,255,.16);color:#b6a4ff;border:1px solid rgba(122,92,255,.35)}
+
+  .full{grid-column:1 / -1}
+
+  /* Footer */
+  .foot{
+    margin-top:46px;padding-top:22px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
+  }
+  .foot a{color:var(--accent);text-decoration:none}
+
+  @media (max-width:760px){
+    .hero h1{font-size:30px}
+    .themes{grid-template-columns:1fr}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="eyebrow">Microsoft Build · June 2–3, 2026 · San Francisco</span>
+    <h1>Microsoft Build 2026<br><span>The Agent Computer Era</span></h1>
+    <p>Satya Nadella's keynote reframed AI from synchronous assistants to autonomous agents that plan, execute and run real work — across silicon, Windows, GitHub, Azure and Microsoft 365. Here's the full map of what shipped.</p>
+    <div class="meta">
+      <span class="pill">🧠 Agent-first platform</span>
+      <span class="pill">🪟 Windows for developers</span>
+      <span class="pill">⚙️ 11,000+ models in Foundry</span>
+      <span class="pill">🔬 Quantum &amp; science</span>
+    </div>
+  </header>
+
+  <!-- THREE THEMES -->
+  <div class="themes">
+    <div class="theme">
+      <div class="n">01</div>
+      <h3>Intelligence that's yours</h3>
+      <p>Microsoft IQ grounds agents in your context and the world's knowledge — built in GitHub, deployed to Foundry.</p>
+    </div>
+    <div class="theme">
+      <div class="n">02</div>
+      <h3>The full stack, your way</h3>
+      <p>Your tools, models and workflows — from silicon to OS to cloud, starting with Windows for developers.</p>
+    </div>
+    <div class="theme">
+      <div class="n">03</div>
+      <h3>What comes next</h3>
+      <p>Agentic systems move from code to human progress — amplifying scientists, researchers and discovery.</p>
+    </div>
+  </div>
+
+  <!-- AGENT PLATFORM -->
+  <section class="section">
+    <h2><span class="dot"></span>Microsoft IQ — the context layer</h2>
+    <p class="sub">A unified intelligence layer that grounds agents in both enterprise and world knowledge, available across GitHub Copilot, Microsoft Foundry and Copilot Studio.</p>
+    <div class="grid">
+      <div class="card">
+        <h4>Work IQ <span class="tag t-ga">GA · APIs Jun 16</span></h4>
+        <p>Workplace intelligence capturing how work happens across Microsoft 365 — people, emails, documents, meetings and how they connect.</p>
+      </div>
+      <div class="card">
+        <h4>Web IQ <span class="tag t-new">New</span> <span class="tag t-preview">Limited access</span></h4>
+        <p>AI-first, MCP-native web grounding stack returning relevant passages at ~2.5x the speed of the next best alternative.</p>
+      </div>
+      <div class="card">
+        <h4>Foundry IQ <span class="tag t-ga">GA</span></h4>
+        <p>Ties knowledge together and enables retrieval planning across enterprise knowledge and the live web.</p>
+      </div>
+      <div class="card">
+        <h4>Fabric IQ <span class="tag t-new">New</span></h4>
+        <p>A shared semantic foundation (ontology) over structured business data for agents to reason on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDRY -->
+  <section class="section">
+    <h2><span class="dot"></span>Microsoft Foundry — build &amp; run agents</h2>
+    <p class="sub">The production layer for deploying, improving and trusting agents at scale.</p>
+    <div class="grid">
+      <div class="card">
+        <h4>Microsoft Agent Framework 1.0 <span class="tag t-ga">GA</span></h4>
+        <p>Production-grade orchestration for .NET and Python with Agent-to-Agent (A2A) protocol so agents on different runtimes coordinate.</p>
+      </div>
+      <div class="card">
+        <h4>Hosted Agents <span class="tag t-soon">GA by end of June</span></h4>
+        <p>Hypervisor-isolated sandboxing, per-agent Entra ID, source-code deploy via azd, built-in content safety and Voice Live.</p>
+      </div>
+      <div class="card">
+        <h4>11,000+ model catalogue <span class="tag t-ga">GA</span></h4>
+        <p>Includes OpenAI GPT-5.5, Anthropic Claude Opus 4.8 (preview), Fireworks AI, Mistral, DeepSeek and more — model-diverse by design.</p>
+      </div>
+      <div class="card">
+        <h4>Foundry Toolkit for VS Code <span class="tag t-ga">GA</span></h4>
+        <p>Bring agent build, test and deployment workflows directly into the editor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COPILOT & AGENT 365 -->
+  <section class="section">
+    <h2><span class="dot"></span>Copilot, Scout &amp; Agent 365</h2>
+    <p class="sub">Agents reach users — and IT gets the controls to govern them.</p>
+    <div class="grid">
+      <div class="card">
+        <h4>Microsoft Scout <span class="tag t-new">New product</span></h4>
+        <p>An always-on personal "Autopilot" agent for work with its own identity, built on OpenClaw. Desktop app for Windows 11+ and macOS, available through the Frontier preview.</p>
+      </div>
+      <div class="card">
+        <h4>A new look for Copilot <span class="tag t-new">New</span></h4>
+        <p>Copilot becomes a superapp uniting chat, Cowork and code in a single experience.</p>
+      </div>
+      <div class="card">
+        <h4>Agent 365 <span class="tag t-ga">SDK GA</span></h4>
+        <p>The governance umbrella for agents — framework-agnostic SDK, Local Agents discovery (Claude Code, Copilot CLI, OpenClaw) in preview.</p>
+      </div>
+      <div class="card">
+        <h4>Copilot Credits <span class="tag t-new">New</span></h4>
+        <p>The consumption meter for agent work — pay-as-you-go ($0.01/credit) or prepaid packs. Per-user Copilot stays for human use.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WINDOWS -->
+  <section class="section">
+    <h2><span class="dot"></span>Windows for developers</h2>
+    <p class="sub">"Not Windows for Windows developers — Windows for developers, period." A developer-optimized OS and a secure home for local agents.</p>
+    <div class="grid">
+      <div class="card">
+        <h4>Aion 1.0 Instruct &amp; Aion 1.0 Plan <span class="tag t-soon">Coming months</span></h4>
+        <p>New on-device models shipping in-box. Instruct handles summarization &amp; rewrites; Plan is a 14B reasoning/tool-calling model with 32K context for fully local agentic work.</p>
+      </div>
+      <div class="card">
+        <h4>Microsoft Execution Containers (MXC) <span class="tag t-preview">Early preview</span></h4>
+        <p>A policy-driven layer declaring exactly what an agent can access (files, network), with containment enforced at runtime.</p>
+      </div>
+      <div class="card">
+        <h4>Windows Developer Configurations <span class="tag t-ga">GA</span></h4>
+        <p>One WinGet command sets up a distraction-free dev box — VS Code, GitHub Copilot, WSL, PowerShell 7 and tuned settings.</p>
+      </div>
+      <div class="card">
+        <h4>Intelligent Terminal <span class="tag t-preview">Experimental</span></h4>
+        <p>Context-aware agents brought into the terminal to debug errors and run multi-step tasks in your flow (ACP integration).</p>
+      </div>
+      <div class="card">
+        <h4>OpenClaw on Windows <span class="tag t-preview">Preview</span></h4>
+        <p>Runs natively and contained via MXC, with its own companion app. NVIDIA is also bringing OpenShell to Windows on MXC.</p>
+      </div>
+      <div class="card">
+        <h4>Coreutils &amp; WSL containers <span class="tag t-ga">GA / Preview</span></h4>
+        <p>Linux-like CLI utilities native on Windows (GA), plus built-in Linux containers via familiar CLI &amp; API (coming to preview).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HARDWARE & INFRA -->
+  <section class="section">
+    <h2><span class="dot"></span>Silicon, devices &amp; infrastructure</h2>
+    <p class="sub">The compute layer for agent-scale work — from the desk to the data center.</p>
+    <div class="grid">
+      <div class="card">
+        <h4>Surface Laptop Ultra <span class="tag t-soon">Later in 2026</span></h4>
+        <p>A high-end Windows AI workstation with NVIDIA RTX Spark silicon and up to 128GB of unified memory.</p>
+      </div>
+      <div class="card">
+        <h4>Surface RTX Spark Dev Box <span class="tag t-soon">Later in 2026 (US)</span></h4>
+        <p>A local AI compute box putting serious on-device horsepower in developers' hands.</p>
+      </div>
+      <div class="card">
+        <h4>Maia 200 &amp; Cobalt 200 <span class="tag t-new">New silicon</span></h4>
+        <p>Microsoft's next-gen accelerator and CPU stack for agent-scale cloud systems, alongside a deepened NVIDIA partnership.</p>
+      </div>
+      <div class="card">
+        <h4>Project Solara <span class="tag t-new">Concept</span></h4>
+        <p>A new platform exploring what comes after the laptop for always-on agents — reference designs and concept devices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA -->
+  <section class="section">
+    <h2><span class="dot"></span>Data for the agentic era</h2>
+    <p class="sub"></p>
+    <div class="grid">
+      <div class="card">
+        <h4>Azure HorizonDB <span class="tag t-new">New</span></h4>
+        <p>Brings PostgreSQL into agentic app development with the scale and characteristics agents need.</p>
+      </div>
+      <div class="card">
+        <h4>Fabric GPU-accelerated analytics <span class="tag t-new">New</span></h4>
+        <p>A new class of GPU-accelerated analytics to make data work faster for agents and developers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELS -->
+  <section class="section">
+    <h2><span class="dot"></span>Microsoft's own models &amp; Frontier Tuning</h2>
+    <p class="sub">The MAI family steps onto center stage, with tooling to make any model fit your company.</p>
+    <div class="grid">
+      <div class="card">
+        <h4>MAI-Thinking-1 <span class="tag t-new">New</span></h4>
+        <p>Microsoft's first dedicated reasoning model — built without distillation and targeted at enterprise customers.</p>
+      </div>
+      <div class="card">
+        <h4>MAI media models <span class="tag t-new">New</span></h4>
+        <p>MAI-Image-2.5 &amp; 2.5-Flash, MAI-Transcribe-1.5 and MAI-Voice-2 expand the in-house multimodal lineup.</p>
+      </div>
+      <div class="card">
+        <h4>MAI-Code-1-Flash <span class="tag t-new">New</span></h4>
+        <p>A small, fast coding model — part of opening MAI model access beyond Foundry.</p>
+      </div>
+      <div class="card">
+        <h4>Frontier Tuning <span class="tag t-new">New</span></h4>
+        <p>A "hill-climbing machine" that adapts models to your data. Early work includes a Mayo Clinic health frontier model and a Land O'Lakes demo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="section">
+    <h2><span class="dot"></span>Security</h2>
+    <p class="sub"></p>
+    <div class="grid">
+      <div class="card full">
+        <h4>MDASH — agentic vulnerability discovery <span class="tag t-preview">Expanded preview</span></h4>
+        <p>A 100-agent, multi-model security scanning harness that traces full exploit chains, validates whether each flaw is genuinely exploitable, and surfaces findings inside the Microsoft Defender Portal. Scored 96.55% on the CyberGym benchmark — up ~10 points.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRONTIER / SCIENCE -->
+  <section class="section">
+    <h2><span class="dot"></span>New frontiers — science &amp; quantum</h2>
+    <p class="sub">Where the same developer platform reaches into research and discovery.</p>
+    <div class="grid">
+      <div class="card">
+        <h4>Microsoft Discovery <span class="tag t-ga">GA</span></h4>
+        <p>An agentic R&amp;D platform whose Discovery Engine uses specialized agents to mimic the scientific method — generating hypotheses and validating theories in a continuous loop, with enterprise governance.</p>
+      </div>
+      <div class="card">
+        <h4>Majorana 2 <span class="tag t-new">Next-gen quantum chip</span></h4>
+        <p>Qubits now 1,000x more reliable, with a mean lifetime of ~20 seconds (vs. microseconds). A major step toward a commercially relevant quantum machine by 2029.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Compiled from Microsoft Build Live, the Official Microsoft &amp; Windows Developer blogs, and Build 2026 press coverage.</span>
+    <span>Official source: <a href="https://news.microsoft.com/build-2026-live-blog/microsoft-build-2026-live">Microsoft Build Live</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
